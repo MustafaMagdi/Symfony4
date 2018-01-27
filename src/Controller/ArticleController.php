@@ -3,9 +3,10 @@
 namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
 	/**
 	 * @Route("/")
@@ -14,7 +15,7 @@ class ArticleController
 	 */
 	public function homepage()
 	{
-		return new Response('Welcome!');
+		return $this->render('base.html.twig');
 	}
 
 	/**
@@ -26,6 +27,8 @@ class ArticleController
 	 */
 	public function show($slug)
 	{
-		return new Response($slug);
+		return $this->render('article/base.html.twig', [
+			'slug' => $slug,
+		]);
 	}
 }
