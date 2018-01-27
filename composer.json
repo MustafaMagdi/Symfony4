@@ -9,14 +9,14 @@
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.0",
         "symfony/lts": "^4@dev",
-        "symfony/twig-bundle": "^4.0",
         "symfony/web-server-bundle": "^4.0",
         "symfony/yaml": "^4.0"
     },
     "require-dev": {
         "sensiolabs/security-checker": "^4.1",
+        "symfony/debug-pack": "^1.0",
         "symfony/dotenv": "^4.0",
-        "symfony/profiler-pack": "^1.0"
+        "symfony/twig-bundle": "^4.0"
     },
     "config": {
         "preferred-install": {
