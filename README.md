@@ -6,6 +6,7 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 
 # What Do We Have
 * [x] Symfony with Flex module.
-* [ ] Easily debugging.
+* [ ] Add Debug.
+* [ ] Add Codeception.
 * [ ] A way to add helper functions.
-* [ ] Update to routing 4.1
+* [ ] Update to routing 4.1.
