@@ -5,6 +5,9 @@
     "codeception/codeception": {
         "version": "2.3.8"
     },
+    "codeception/phpunit-wrapper": {
+        "version": "7.0.2"
+    },
     "codeception/stub": {
         "version": "1.0.2"
     },
