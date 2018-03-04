@@ -17,7 +17,7 @@
         "sensiolabs/security-checker": "^4.1",
         "symfony/debug-pack": "^1.0",
         "symfony/dotenv": "^4.0",
-        "symfony/twig-bundle": "^4.0"
+        "symfony/twig-bundle": "4.0.4"
     },
     "config": {
         "preferred-install": {
