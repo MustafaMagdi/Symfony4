@@ -6,8 +6,8 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 
 # What Do We Have
 * [x] Symfony with Flex module.
-* [ ] Add Debug.
-* [ ] Add Codeception.
-* [ ] A way to add helper functions.
+* [ ] Configure [php-pm](https://github.com/php-pm/php-pm).
+* [ ] Add Debug via parameters.
+* [ ] Middleware via EventDispatcher (JWT/CORS).
 * [ ] Update to routing 4.1.
 * [ ] Extend Flex.
