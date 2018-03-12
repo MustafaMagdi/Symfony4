@@ -1,5 +1,5 @@
 # Symfony4
-Symfnoy4 using Flex.
+Symfnoy4 using Flex and [PHP-PM](https://github.com/php-pm/php-pm).
 
 # Purpose
 We didn't re-invent the wheel here, we are just coming up with the latest updates from Symfony4 with some customizations to make it fit your usage in your microservices architecture.
