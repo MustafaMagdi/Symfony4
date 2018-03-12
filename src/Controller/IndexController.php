@@ -8,18 +8,18 @@ use Symfony\Component\HttpFoundation\Response;
 
 class IndexController extends AbstractController
 {
-	/**
-	 * @Route("/")
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		// @todo: we have to configure it to work based on a param is being sent with the request
-		// on dev
-		return $this->render('index/index.html.twig');
+    /**
+     * @Route("/")
+     *
+     * @return Response
+     */
+    public function index(): Response
+    {
+        // @todo: we have to configure it to work based on a param is being sent with the request
+        // for profiling
+        // return $this->render('index/index.html.twig');
 
-		// on prod
-		// return $this->json(['data']);
-	}
+        //
+        return $this->json(['data']);
+    }
 }
