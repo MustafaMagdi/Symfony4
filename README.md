@@ -1,5 +1,5 @@
 # Symfony4
-Symfnoy4 using Flex and [PHP-PM](https://github.com/php-pm/php-pm).
+Symfnoy4 using Flex and [ReactPHP](https://reactphp.org/).
 
 # Purpose
 We didn't re-invent the wheel here, we are just coming up with the latest updates from Symfony4 with some customizations to make it fit your usage in your microservices architecture.
@@ -8,8 +8,10 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] Symfony with Flex module.
 * [x] Add ReactPHP.
 * [ ] Restful support.
-* [ ] Add Debug via parameters.
-* [ ] Middleware via EventDispatcher (JWT/CORS).
-* [ ] Update to routing 4.1.
+* [ ] Middleware.
+* [ ] GWT.
+* [ ] CORS.
+* [ ] Add Debug via parameters (like sending `_profile` as a param).
+* [ ] Add more options to ReactPHP.
+* [ ] Update to routing 4.1 whenever it is stable.
 * [ ] Extend Flex.
-* [ ] Configure [php-pm](https://github.com/php-pm/php-pm).
