@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "df91313c9f62e4651c857f396597d0ca",
+    "content-hash": "c0d17cf09c460d18e1f91a831e9052ea",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1154,52 +1154,6 @@
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
             "time": "2018-02-11T17:17:44+00:00"
-        },
-        {
-            "name": "symfony/flex",
-            "version": "v1.0.70",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/flex.git",
-                "reference": "1f00c05d35523dc0ac52e4a457989a069be5a7a4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/1f00c05d35523dc0ac52e4a457989a069be5a7a4",
-                "reference": "1f00c05d35523dc0ac52e4a457989a069be5a7a4",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0",
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0.2",
-                "symfony/phpunit-bridge": "^3.2.8"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
-                "class": "Symfony\\Flex\\Flex"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Flex\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien.potencier@gmail.com"
-                }
-            ],
-            "time": "2018-02-22T07:00:47+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -4238,6 +4192,52 @@
                 "environment"
             ],
             "time": "2018-01-03T17:15:19+00:00"
+        },
+        {
+            "name": "symfony/flex",
+            "version": "v1.0.71",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/flex.git",
+                "reference": "51d7ddce85ca8b73a1fc16771f607b7d56692dbd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/51d7ddce85ca8b73a1fc16771f607b7d56692dbd",
+                "reference": "51d7ddce85ca8b73a1fc16771f607b7d56692dbd",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0.2",
+                "symfony/phpunit-bridge": "^3.2.8"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "class": "Symfony\\Flex\\Flex"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Flex\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien.potencier@gmail.com"
+                }
+            ],
+            "time": "2018-03-10T21:15:53+00:00"
         },
         {
             "name": "symfony/monolog-bridge",
