@@ -6,6 +6,8 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 
 # What Do We Have
 * [x] Symfony with Flex module.
+* [x] Add ReactPHP.
+* [ ] Restful support.
 * [ ] Add Debug via parameters.
 * [ ] Middleware via EventDispatcher (JWT/CORS).
 * [ ] Update to routing 4.1.

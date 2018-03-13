@@ -50,6 +50,9 @@
             "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
         }
     },
+    "evenement/evenement": {
+        "version": "v3.0.1"
+    },
     "facebook/webdriver": {
         "version": "1.5.0"
     },
@@ -127,6 +130,36 @@
     },
     "psr/simple-cache": {
         "version": "1.0.0"
+    },
+    "react/cache": {
+        "version": "v0.4.2"
+    },
+    "react/dns": {
+        "version": "v0.4.13"
+    },
+    "react/event-loop": {
+        "version": "v0.4.3"
+    },
+    "react/http": {
+        "version": "v0.8.1"
+    },
+    "react/promise": {
+        "version": "v2.5.1"
+    },
+    "react/promise-stream": {
+        "version": "v1.1.1"
+    },
+    "react/promise-timer": {
+        "version": "v1.2.1"
+    },
+    "react/socket": {
+        "version": "v0.8.10"
+    },
+    "react/stream": {
+        "version": "v0.7.7"
+    },
+    "ringcentral/psr7": {
+        "version": "1.2.2"
     },
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"
