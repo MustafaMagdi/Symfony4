@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $loop = React\EventLoop\Factory::create();
 
-$server = new React\Http\Server(function (Psr\Http\Message\ServerRequestInterface $request) {
+$server = new React\Http\Server(function () {
 	// The check is to ensure we don't use .env in production
 	if (!isset($_SERVER['APP_ENV'])) {
 		if (!class_exists(Dotenv::class)) {
@@ -42,11 +42,15 @@ $server = new React\Http\Server(function (Psr\Http\Message\ServerRequestInterfac
 	// todo: check other headers
 	$contentType = $response->headers->get('Content-Type');
 
-	return new React\Http\Response(
+	$reactResponse = new React\Http\Response(
 		$response->getStatusCode(),
 		["Content-Type: $contentType"],
 		$response->getContent()
 	);
+
+	$kernel->terminate($request, $response);
+
+	return $reactResponse;
 });
 
 $socket = new React\Socket\Server(8080, $loop);
