@@ -22,28 +22,16 @@ class Request
     }
 
     /**
+     * here we want to make sure we setup the route
+     *
      * @return \Symfony\Component\HttpFoundation\Request
      */
     public function map(): \Symfony\Component\HttpFoundation\Request
     {
-        $method  = $this->request->getMethod();
-        $headers = $this->request->getHeaders();
-        $query   = $this->request->getQueryParams();
-        $content = $this->request->getBody();
-        $post    = [];
-
         // create symfony request object
-        $symfonyRequest = new \Symfony\Component\HttpFoundation\Request(
-            $query,
-            $post,
-            [], // attributes
-            [], // cookies
-            $this->request->getUploadedFiles(),
-            [], // server
-            $content
-        );
-        $symfonyRequest->setMethod($method);
-        $symfonyRequest->headers->replace($headers);
+        $symfonyRequest = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
+
+        // set routing
         $symfonyRequest->server->set('REQUEST_URI', $this->request->getUri()->getPath());
 
         return $symfonyRequest;
