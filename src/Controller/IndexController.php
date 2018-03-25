@@ -22,4 +22,14 @@ class IndexController extends AbstractController
         //
         return $this->json(['data']);
     }
+
+    /**
+     * @Route("/test/route")
+     *
+     * @return Response
+     */
+    public function testRout(): Response
+    {
+        return $this->json(['data of testRoute()']);
+    }
 }

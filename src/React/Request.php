@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Map;
+namespace App\React;
 
 use Psr\Http\Message\ServerRequestInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class RequestMap
+ * Class Request
  *
- * @package App\Map
+ * @package App\React
  */
-class RequestMap
+class Request
 {
     /**
      * @var \Psr\Http\Message\ServerRequestInterface
@@ -23,9 +22,9 @@ class RequestMap
     }
 
     /**
-     * @return Request
+     * @return \Symfony\Component\HttpFoundation\Request
      */
-    public function map(): Request
+    public function map(): \Symfony\Component\HttpFoundation\Request
     {
         $method  = $this->request->getMethod();
         $headers = $this->request->getHeaders();
@@ -34,7 +33,7 @@ class RequestMap
         $post    = [];
 
         // create symfony request object
-        $symfonyRequest = new Request(
+        $symfonyRequest = new \Symfony\Component\HttpFoundation\Request(
             $query,
             $post,
             [], // attributes

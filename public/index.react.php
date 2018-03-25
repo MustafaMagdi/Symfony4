@@ -36,7 +36,7 @@ $kernel = new Kernel($env, $debug);
 
 $server = new React\Http\Server(function (\Psr\Http\Message\ServerRequestInterface $request) use ($kernel) {
     // map the request
-    $requestMap = new \App\Map\RequestMap($request);
+    $requestMap     = new \App\React\Request($request);
     $symfonyRequest = $requestMap->map();
 
     // handle the request and return symfony response object
@@ -44,7 +44,7 @@ $server = new React\Http\Server(function (\Psr\Http\Message\ServerRequestInterfa
 
     return new React\Http\Response(
         $sfResponse->getStatusCode(),
-        ['Content-Type: ' . $headers['Content-Type']],
+        ['Content-Type: ' . $symfonyRequest->headers->get('Content-Type')],
         $sfResponse->getContent()
     );
 });
