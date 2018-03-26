@@ -19,10 +19,10 @@ class IndexController extends AbstractController
     {
         // @todo: we have to configure it to work based on a param is being sent with the request
         // for profiling
-        // return $this->render('index/index.html.twig');
+        // return $this->render('debug.html.twig');
 
         //
-        return $this->json(['data']);
+        return $this->json(['data of index()']);
     }
 
     /**
