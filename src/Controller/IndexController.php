@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Traits\ControllerTrait;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class IndexController extends AbstractController
 {
+    use ControllerTrait;
+
     /**
      * @Route("/")
      * @Method({"GET"})
@@ -17,12 +20,7 @@ class IndexController extends AbstractController
      */
     public function index(): Response
     {
-        // @todo: we have to configure it to work based on a param is being sent with the request
-        // for profiling
-        // return $this->render('debug.html.twig');
-
-        //
-        return $this->json(['data of index()']);
+        return $this->respond(['data of index()']);
     }
 
     /**
@@ -33,6 +31,6 @@ class IndexController extends AbstractController
      */
     public function testRout(): Response
     {
-        return $this->json(['data of testRoute()']);
+        return $this->respond(['data of testRoute()']);
     }
 }
