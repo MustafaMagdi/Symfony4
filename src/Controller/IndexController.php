@@ -20,7 +20,7 @@ class IndexController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->respond(['data of index()']);
+        return $this->success(['data of index()']);
     }
 
     /**
@@ -31,6 +31,6 @@ class IndexController extends AbstractController
      */
     public function testRout(): Response
     {
-        return $this->respond(['data of testRoute()']);
+        return $this->created(['data of testRoute()']);
     }
 }

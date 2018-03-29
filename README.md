@@ -8,7 +8,7 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] Symfony with Flex module.
 * [x] Add ReactPHP.
 * [x] Restful support (Simple).
-* [ ] Custom `ControllerTrait`.
+* [x] Custom `ControllerTrait`.
 * [ ] Middleware (thinking to add a customer annotation for it).
 * [ ] GWT.
 * [ ] CORS.
