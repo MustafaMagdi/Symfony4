@@ -12,7 +12,7 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [ ] Middleware (thinking to add a customer annotation for it).
 * [ ] GWT.
 * [ ] CORS.
-* [ ] Add Debug via parameters (like sending `_profile` as a param).
+* [x] Add Debug via parameters (like sending `_profile` as a param).
 * [ ] Add more options to ReactPHP.
 * [ ] Update to routing 4.1 whenever it is stable.
 * [ ] Extend Flex.
