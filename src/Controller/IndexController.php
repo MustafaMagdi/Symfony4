@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Annotations\Guard;
 use App\Traits\ControllerTrait;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -15,6 +16,7 @@ class IndexController extends AbstractController
     /**
      * @Route("/")
      * @Method({"GET"})
+     * @Guard()
      *
      * @return Response
      */

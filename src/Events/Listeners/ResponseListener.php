@@ -19,14 +19,14 @@ class ResponseListener implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            KernelEvents::RESPONSE => 'onKernelTerminate',
+            KernelEvents::RESPONSE => 'onKernelResponse',
         ];
     }
 
     /**
      * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
      */
-    public function onKernelTerminate(FilterResponseEvent $event): void
+    public function onKernelResponse(FilterResponseEvent $event): void
     {
     }
 }
