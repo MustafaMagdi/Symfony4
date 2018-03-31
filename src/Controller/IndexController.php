@@ -35,6 +35,14 @@ class IndexController extends AbstractController
     }
 
     /**
+     * @Route("/profile")
+     */
+    public function profile()
+    {
+        return new Response('<html><body>Profile page!</body></html>');
+    }
+
+    /**
      * @Route("/admin")
      */
     public function admin()
