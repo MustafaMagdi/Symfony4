@@ -11,7 +11,7 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] Custom `ControllerTrait`.
 * [x] Middleware, [check here](https://symfony.com/doc/current/event_dispatcher/before_after_filters.html).
 * [ ] GWT.
-* [ ] CORS.
+* [x] CORS.
 * [x] Add Debug via parameters (like sending `_profile` as a param).
 * [ ] Add `ExceptionalTrait`.
 * [ ] Update to routing 4.1 whenever it is stable.
