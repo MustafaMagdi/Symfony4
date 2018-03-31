@@ -9,10 +9,10 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] Add ReactPHP.
 * [x] Restful support (Simple).
 * [x] Custom `ControllerTrait`.
-* [ ] Middleware (thinking to add a custom annotation for it).
+* [x] Middleware, [check here](https://symfony.com/doc/current/event_dispatcher/before_after_filters.html).
 * [ ] GWT.
 * [ ] CORS.
 * [x] Add Debug via parameters (like sending `_profile` as a param).
-* [ ] Add more options to ReactPHP.
+* [ ] Add `ExceptionalTrait`.
 * [ ] Update to routing 4.1 whenever it is stable.
 * [ ] Extend Flex.

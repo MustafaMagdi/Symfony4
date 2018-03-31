@@ -5,6 +5,8 @@ namespace App\React;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
+ * todo: use https://symfony.com/doc/current/components/psr7.html
+ *
  * Class Request
  *
  * @package App\React
