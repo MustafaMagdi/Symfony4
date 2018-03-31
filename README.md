@@ -9,7 +9,7 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] Add ReactPHP.
 * [x] Restful support (Simple).
 * [x] Custom `ControllerTrait`.
-* [ ] Middleware (thinking to add a customer annotation for it).
+* [ ] Middleware (thinking to add a custom annotation for it).
 * [ ] GWT.
 * [ ] CORS.
 * [x] Add Debug via parameters (like sending `_profile` as a param).
