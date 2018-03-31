@@ -33,4 +33,12 @@ class IndexController extends AbstractController
     {
         return $this->created(['data of testRoute()']);
     }
+
+    /**
+     * @Route("/admin")
+     */
+    public function admin()
+    {
+        return new Response('<html><body>Admin page!</body></html>');
+    }
 }

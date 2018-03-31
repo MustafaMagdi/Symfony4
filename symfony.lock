@@ -65,11 +65,23 @@
     "guzzlehttp/psr7": {
         "version": "1.4.2"
     },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.3",
+            "ref": "a66e8a7b75a1825cf2414d5dd53c7ed38c8654d1"
+        }
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
     "myclabs/deep-copy": {
         "version": "1.7.0"
+    },
+    "namshi/jose": {
+        "version": "7.2.3"
     },
     "nelmio/cors-bundle": {
         "version": "1.5",
@@ -296,6 +308,9 @@
     "symfony/http-kernel": {
         "version": "v4.0.3"
     },
+    "symfony/inflector": {
+        "version": "v4.0.6"
+    },
     "symfony/lts": {
         "version": "4-dev"
     },
@@ -332,6 +347,9 @@
     "symfony/profiler-pack": {
         "version": "v1.0.3"
     },
+    "symfony/property-access": {
+        "version": "v4.0.6"
+    },
     "symfony/routing": {
         "version": "4.0",
         "recipe": {
@@ -339,6 +357,18 @@
             "branch": "master",
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
+        }
+    },
+    "symfony/security": {
+        "version": "v4.0.6"
+    },
+    "symfony/security-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
     },
     "symfony/stopwatch": {

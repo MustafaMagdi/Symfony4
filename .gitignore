@@ -25,3 +25,7 @@
 ###> phpunit/phpunit ###
 /phpunit.xml
 ###< phpunit/phpunit ###
+
+###> lexik/jwt-authentication-bundle ###
+/%CONFIG_DIR%/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
