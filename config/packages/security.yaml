@@ -16,7 +16,14 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            pattern: ^/test
+            security: false
+        auth:
+            pattern: ^/profile
+            security: true
+            guard:
+                authenticators:
+                    - App\Security\JwtTokenAuthenticator
 
             # activate different ways to authenticate
 

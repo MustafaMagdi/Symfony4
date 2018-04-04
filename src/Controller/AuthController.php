@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
+use App\Models\Auth;
 use App\Traits\ControllerTrait;
-use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,23 +14,20 @@ class AuthController extends AbstractController
 {
     use ControllerTrait;
 
-    /**
-     * @var \Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface
-     */
-    protected $encoder;
+    protected $authModel;
 
     /**
      * AuthController constructor.
      *
-     * @param \Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface $encoder
+     * @param \App\Models\Auth $authModel
      */
-    public function __construct(JWTEncoderInterface $encoder)
+    public function __construct(Auth $authModel)
     {
-        $this->encoder = $encoder;
+        $this->authModel = $authModel;
     }
 
     /**
-     * @Route("/login")
+     * @Route("/auth")
      * @Method({"POST"})
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
@@ -38,12 +35,9 @@ class AuthController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Lexik\Bundle\JWTAuthenticationBundle\Exception\JWTEncodeFailureException
      */
-    public function token(Request $request): Response
+    public function auth(Request $request): Response
     {
-        $token = $this->encoder->encode([
-            'username' => 'username',
-            'email'    => 'username@domain.com',
-        ]);
+        $token = $this->authModel->generateToken($request);
 
         return $this->created([
             'token' => $token,

@@ -20,33 +20,28 @@ class IndexController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->success(['data of index()']);
+        return $this->success(['homepage']);
     }
 
     /**
-     * @Route("/test/route")
-     * @Method({"POST"})
+     * @Route("/test/route1")
+     * @Method({"GET"})
      *
      * @return Response
      */
-    public function testRout(): Response
+    public function route1(): Response
     {
-        return $this->created(['data of testRoute()']);
+        return $this->created(['test/route1']);
     }
 
     /**
-     * @Route("/profile")
+     * @Route("/test/route2")
+     * @Method({"GET"})
+     *
+     * @return Response
      */
-    public function profile()
+    public function route2(): Response
     {
-        return new Response('<html><body>Profile page!</body></html>');
-    }
-
-    /**
-     * @Route("/admin")
-     */
-    public function admin()
-    {
-        return new Response('<html><body>Admin page!</body></html>');
+        return $this->created(['test/route2']);
     }
 }
