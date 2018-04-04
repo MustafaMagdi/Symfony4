@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
+ * this trait must be used in just Controller classes
+ *
  * Class ControllerTrait
  *
  * @package App\Traits

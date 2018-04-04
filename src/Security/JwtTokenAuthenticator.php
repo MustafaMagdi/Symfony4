@@ -17,6 +17,8 @@ use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
 class JwtTokenAuthenticator extends AbstractGuardAuthenticator
 {
+    const UNAUTHORIZED = 401;
+
     /**
      * @var \Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface
      */
@@ -53,8 +55,8 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
     public function start(Request $request, AuthenticationException $authException = null)
     {
         return new JsonResponse([
-            'error' => 'Auth required',
-        ], 401);
+            'error' => 'Unauthorized',
+        ], self::UNAUTHORIZED);
     }
 
     /**
@@ -102,17 +104,8 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
             'Authorization'
         );
 
-        // get the token
-        $token = $extractor->extract($request);
-
-        // if no token just stop the process of authenticating
-        if (!$token) {
-            return new JsonResponse([
-                'error' => 'Auth required',
-            ], 401);
-        }
-
-        return $token;
+        // return the token
+        return $extractor->extract($request);
     }
 
     /**
@@ -133,19 +126,18 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
         // decode the token and get all the data
-        $data = $this->encoder->decode($credentials);
-
-        // if not data
-        if (!$data) {
-            return new CustomUserMessageAuthenticationException('Invalid token!');
+        try {
+            $data = $this->encoder->decode($credentials);
+        } catch (\Exception $e) {
+            throw new CustomUserMessageAuthenticationException($e->getMessage());
         }
 
         // get the user logic
         // get username
-        $username = $data['username'];
+        $username = $data['username'] ?? '';
 
         // query the DB withe the username key
-        return new User($username, 'test');
+        return new User($username, '');
     }
 
     /**
@@ -187,8 +179,8 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
         return new JsonResponse([
-            'error' => 'Auth required',
-        ], 401);
+            'error' => $exception->getMessage(),
+        ], self::UNAUTHORIZED);
     }
 
     /**
@@ -208,6 +200,7 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
      */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
+        // continue to controller class
         return null;
     }
 
@@ -227,6 +220,7 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
      */
     public function supportsRememberMe()
     {
+        // not supported in our case
         return false;
     }
 }
