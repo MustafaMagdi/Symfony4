@@ -6,6 +6,7 @@ use App\Traits\ControllerTrait;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProfileController extends AbstractController
 {
@@ -17,7 +18,7 @@ class ProfileController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function profileView()
+    public function profileView(): Response
     {
         return $this->success(['Profile page view!']);
     }
@@ -28,7 +29,7 @@ class ProfileController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function profileEdit()
+    public function profileEdit(): Response
     {
         return $this->updated(['Profile page edited!']);
     }

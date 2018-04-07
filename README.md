@@ -13,9 +13,11 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] CORS .
 * [x] GWT.
 * [x] Add Debug via parameters (like sending `_profile` as a param).
-* [ ] Enhance the profiling experience.
+* [ ] Unify the response body/add a pattern.
 * [ ] Add `ExceptionalTrait`.
 * [ ] Use [PSR-7 Bridge](https://symfony.com/doc/current/components/psr7.html) with ReactPHP.
 * [ ] Add tests.
-* [ ] Update to routing 4.1 whenever it is stable.
 * [ ] Extend Flex.
+
+# Documentation
+* [ ] Highlight profiling experience.
