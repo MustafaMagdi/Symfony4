@@ -39,6 +39,9 @@ $server = new React\Http\Server(function (\Psr\Http\Message\ServerRequestInterfa
     $httpFoundationFactory = new \Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory();
     $symfonyRequest        = $httpFoundationFactory->createRequest($request);
 
+    // simple logging
+    echo $symfonyRequest->getRequestUri();
+
     // handle the request and return symfony response object
     $symfonyResponse = $kernel->handle($symfonyRequest);
 

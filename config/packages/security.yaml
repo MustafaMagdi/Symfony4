@@ -8,12 +8,15 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+            stateless:  true
         main:
             pattern: ^/test
             security: false
+            stateless:  true
         auth:
             pattern: ^/profile
             security: true
+            stateless:  true
             guard:
                 authenticators:
                     - App\Security\JwtTokenAuthenticator
