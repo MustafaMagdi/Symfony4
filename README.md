@@ -9,16 +9,20 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] Add ReactPHP.
 * [x] Restful support (Simple).
 * [x] Custom `ControllerTrait`.
-* [x] Middleware, [check here](https://symfony.com/doc/current/event_dispatcher/before_after_filters.html).
-* [x] CORS .
+* [x] [Middleware](https://symfony.com/doc/current/event_dispatcher/before_after_filters.html).
+* [x] CORS [NelmioCorsBundle](https://github.com/nelmio/NelmioCorsBundle).
 * [x] GWT [LexikJWT](https://github.com/lexik/LexikJWTAuthenticationBundle).
 * [x] Add Debug via parameters (like sending `_profile` as a param).
-* [ ] AccessControl.
+* [x] Basic Authentication.
+* [x] Basic AccessControl.
 * [ ] Unify the response body/add a pattern.
 * [ ] Add `ExceptionalTrait`.
-* [ ] Use [PSR-7 Bridge](https://symfony.com/doc/current/components/psr7.html) with [ReactPHP](https://reactphp.org/).
+* [x] Use [PSR-7 Bridge](https://symfony.com/doc/current/components/psr7.html) with ReactPHP.
+* [x] Clean the code.
 * [ ] Add tests.
-* [ ] Clean the code.
 
 # Documentation
+* [ ] Why.
+* [ ] How to setup.
+* [ ] How security system is working.
 * [ ] Highlight profiling experience.

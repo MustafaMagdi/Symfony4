@@ -134,10 +134,10 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
 
         // get the user logic
         // get username
-        $username = $data['username'] ?? '';
+        $username = $data['username'] ?? 'username';
 
         // query the DB withe the username key
-        return new User($username, '');
+        return new User($username, '', ['ROLE_USER']);
     }
 
     /**

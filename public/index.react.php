@@ -35,17 +35,17 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
 $kernel = new Kernel($env, $debug);
 
 $server = new React\Http\Server(function (\Psr\Http\Message\ServerRequestInterface $request) use ($kernel) {
-    // map the request
-    $requestMap     = new \App\React\Request($request);
-    $symfonyRequest = $requestMap->map();
+    // convert the psr7 request to Symfony request
+    $httpFoundationFactory = new \Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory();
+    $symfonyRequest        = $httpFoundationFactory->createRequest($request);
 
     // handle the request and return symfony response object
-    $sfResponse = $kernel->handle($symfonyRequest);
+    $symfonyResponse = $kernel->handle($symfonyRequest);
 
     return new React\Http\Response(
-        $sfResponse->getStatusCode(),
-        ['Content-Type: ' . $symfonyRequest->headers->get('Content-Type')],
-        $sfResponse->getContent()
+        $symfonyResponse->getStatusCode(),
+        $symfonyResponse->headers->all(),
+        $symfonyResponse->getContent()
     );
 });
 
