@@ -22,7 +22,57 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [ ] Add tests.
 
 # Documentation
-* [ ] Why.
-* [ ] How to setup.
+* [x] Why.
+* [ ] Why Symfony.
+* [x] How to setup.
+* [x] Run the app.
+* [x] Profiling.
 * [ ] How security system is working.
-* [ ] Highlight profiling experience.
+
+### Why
+Add the minimal amount of components and services that serve the need of having Restful API.
+
+### Why Symfony
+Wait for it.
+
+### How to setup
+1. Clone the repo:
+```ssh
+https://github.com/MustafaMagdi/Symfony4.git
+```
+
+2. Install packages:
+```ssh
+composer install
+```
+
+3. Configure `.env` file:
+```ssh
+cp .env.dist .env
+```
+
+4. Generate SSH keys for [LexikJWT](https://github.com/lexik/LexikJWTAuthenticationBundle):
+```ssh
+$ mkdir -p var/jwt
+$ openssl genrsa -out var/jwt/private.pem -aes256 4096
+$ openssl rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
+```
+
+And now, you run the application:
+
+### Run the app
+1. For the regular setup:
+```ssh
+./bin/console server:run
+```
+
+2. For ReactPHP:
+```ssh
+php public/index.react.php
+```
+
+### Profiling
+Symfony is already coming up with a really nice [Profiler Component](https://symfony.com/doc/current/profiler.html), 
+to see the nice profiler bar in browser, just send `_profiler` param in your request, it even dumps the response body.
+
+On development env, you still can open the profiler url form the response header, just check the `X-Debug-Token-Link`.
