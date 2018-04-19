@@ -35,6 +35,10 @@ class Auth
      */
     public function generateToken(Request $request): string
     {
+        // todo: check the correct user credentials
+        //
+
+        // the following is just dummy data
         $token = $this->encoder->encode([
             'username' => 'username',
             'email'    => 'username@domain.com',

@@ -19,6 +19,7 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [ ] Add `ExceptionalTrait`.
 * [x] Use [PSR-7 Bridge](https://symfony.com/doc/current/components/psr7.html) with ReactPHP.
 * [x] Clean the code.
+* [ ] Integrate [blackfire.io](https://blackfire.io/).
 * [ ] Add tests.
 
 # Documentation
@@ -28,11 +29,12 @@ We didn't re-invent the wheel here, we are just coming up with the latest update
 * [x] Run the app.
 * [x] Installing new packages.
 * [x] Profiling.
-* [ ] How to create a new endpoint.
-* [ ] How security system is working.
+* [x] How to integrate JWT with Symfony security system.
+* [x] How to create a new endpoint.
+* [x] References for Symfony4.
 
 ### Why
-Add the minimal amount of components and services that serve the need of having Restful API.
+Add the minimal amount of components and services that serve the needs of having Restful API following the standards.
 
 ### Why Symfony
 Wait for it.
@@ -40,12 +42,12 @@ Wait for it.
 ### How to setup
 1. Clone the repo:
 ```ssh
-https://github.com/MustafaMagdi/Symfony4.git
+git clone https://github.com/MustafaMagdi/Symfony4.git
 ```
 
 2. Install packages:
 ```ssh
-composer install
+cd Symfony4 && composer install
 ```
 
 3. Configure `.env` file:
@@ -89,3 +91,48 @@ Symfony is already coming up with a really nice [Profiler Component](https://sym
 to see the nice profiler bar in browser, just send `_profiler` param in your request, it even dumps the response body.
 
 On development env, you still can open the profiler url form the response header, just check the `X-Debug-Token-Link`.
+
+### How to integrate JWT with Symfony security system
+In order to understand how Symfony security system is working, check [the documentation here](https://symfony.com/doc/current/security.html).
+We have two steps to configure JWT with Symfony security system:
+
+One second, if you are not aware about JWT, just check [jwt.io](https://jwt.io/).
+
+##### 1. Login the user:
+You need to generate the token for the user:
+```ssh
+Controller/AuthController.php:generateToken
+```
+
+##### 2. Validate the user:
+By defining the authenticator class in `config/packages/security.yaml`:
+```yaml
+        guard:
+            authenticators:
+                - App\Security\JwtTokenAuthenticator
+```
+Check `App\Security\JwtTokenAuthenticator:getUser`, which you decode the token and match with your DB user record, 
+then, you return the `Symfony\Component\Security\Core\User` object with a dummy user role that should match what we 
+have in `security.yaml`:
+```yaml
+    access_control:
+        - { path: ^/profile, roles: ROLE_USER }
+```
+
+### How to create a new endpoint
+It is very simple, you will notice at the docblock of the controller functions:
+```php
+    /**
+     * @Route("/auth") // where you provide the route
+     * @Method({"POST"}) // where you provide the HTTP method
+     * ...
+     */
+```
+
+### References for Symfony4
+In order to involve in Symfony:
+1. For sure, it is [Symfony's website](http://symfony.com/doc/current/index.html).
+2. [Symfony's blog](http://symfony.com/blog/), they have "A week of Symfony" is being release in a weekly basis with 
+all the updates.
+3. [KNP Symfony](https://knpuniversity.com/search?q=symfony) there are some courses introduced by [weaverryan](https://github.com/weaverryan), I really like the way he is introducing them. Thanks you @weaverryan.
+

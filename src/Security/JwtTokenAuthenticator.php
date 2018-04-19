@@ -126,14 +126,16 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
         // decode the token and get all the data
+        // checking if any issue while decoding
         try {
             $data = $this->encoder->decode($credentials);
         } catch (\Exception $e) {
             throw new CustomUserMessageAuthenticationException($e->getMessage());
         }
 
-        // get the user logic
-        // get username
+        // @todo: match the user credentials with your database records
+
+        // just a dummy data
         $username = $data['username'] ?? 'username';
 
         // query the DB withe the username key
